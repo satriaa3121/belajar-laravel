@@ -35,35 +35,27 @@
     <h2>Selamat Datang, {{$name}}</h2>
     <h2>Anda adalah: {{$role}}</h2>
 
-    <!-- @if ($role == 'Penguasa')
-    <a href="">ke halaman Penguasa</a>
-    @elseif ($role == 'prajurit')
-    <a href="">Cek persediaan</a>
-    @else 
-    <a href="">Mau ngapain?</a>
-    @endif 
-    <br>
-    @if ($name == 'Reyhan Satria')
-    <a href="">Khusus Vip</a>
-    @else
-    <a href=""">km siapa?</a> 
-    @endif -->
 
-    @switch($role)
+    <!-- @for($i = 0; $i < 11; $i++)
+    {{$i}} <br>
+    @endfor -->
 
-    @case($role=='mandor')
-    <a href="">ke halaman Ambil Gaji</a>
-    @break
+    <!-- @foreach($buah as $data)
+    {{$data}} <br>
+    @endforeach -->
 
-    @case($role=='pekerja')
-    <a href="">Ke Gudang Persediaan</a>
-    @break
-
-    @default
-    <a href="">Ambil Role</a>
-    <a href="">Ajukan naik pangkat</a>
-
-    @endswitch
+    <table class="table">
+        <tr>
+            <th>No.</th>
+            <th>nama</th>
+        </tr>
+        @foreach($buah as $data)
+        <tr>
+            <td>{{$loop->iteration}}</td>
+            <td>{{$data}}</td>
+        </tr>
+    @endforeach
+    </table>
 
 
 </div>
