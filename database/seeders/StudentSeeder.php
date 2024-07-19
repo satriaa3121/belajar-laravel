@@ -39,5 +39,12 @@ class StudentSeeder extends Seeder
     //             'updated_at' => Carbon::now(),
     //         ]);
     //     }
+
+
+    Student::factory()->count(20)->create();
+    
+
       }
 }
+
+
