@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('class', function (Blueprint $table) {
-             $table->unique('name')->change();
+        Schema::create('extracurriculars', function (Blueprint $table) {
+            $table->id();
+            $table->string('name', 100);
+            $table->timestamps();
         });
     }
 
@@ -21,8 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('class', function (Blueprint $table) {
-            $table->dropUnique('class_name_unique');
-        });
+        Schema::dropIfExists('extracurriculars');
     }
 };
