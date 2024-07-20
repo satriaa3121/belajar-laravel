@@ -9,9 +9,9 @@ class Student extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name', 'gender', 'nis', 'class_id'
-    ];
-    public $incrementing = false;
+    public function class()
+    {
+        return $this->belongsTo(ClassRoom::class);
+    }
 
 }
