@@ -21,7 +21,7 @@
          <td>{{$data->name}}</td>
          <td>
             @foreach ($data->students as $students)
-            {{$students['name']}}
+           - {{$students['name']}} <br>
 
             @endforeach
             </td>
