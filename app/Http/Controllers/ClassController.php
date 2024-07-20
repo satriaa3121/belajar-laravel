@@ -9,7 +9,11 @@ class ClassController extends Controller
 {
     public function index()
     {
-        $class = ClassRoom::with('students')->get(); 
+
+        //lazy load 
+        $class = ClassRoom::all(); //klo butuh baru request data  
+        //eager load
+        // $class = ClassRoom::with('students')->get(); 
         return view('classroom', ['classList' => $class]);
     }
 }
